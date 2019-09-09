@@ -1,0 +1,255 @@
+Welcome, in this video, I'm going to demonstrate how to add
+
+new files to a Git repository. First of all I have a few URLs
+
+that I want to bring to your attention. The first one is the bitly URL
+
+to the Git repository on GitHub that we're using.
+
+If you haven't already, go to this URL and fork it into your personal repository;
+
+I have a prior video that covers this in detail.
+
+The next two URLs will be where I'm getting the filler text
+
+for this and other videos for covering the Git basic concepts;
+
+since source files are just text files, then any type of text will do.
+
+So, starting off, I'm going to be using some ipsum lorem as dummy text
+
+in order to cover the basic Git concepts. The first URL is "meettheipsums.com",
+
+which is a collection of ipsum lorem websites that you can get for filler text.
+
+The specific website I'll be using in this demo will be "hipsum.co",
+
+which is the Hipster Ipsum website. Now I'm going to go over to my terminal;
+
+so back on the terminal, I'm currently in my user's home directory.
+
+So, if I do a "pwd", and press enter, you can see that I'm in my user's home directory,
+
+which is also notated by the "~". Within my user's directory, I have a
+
+"projects" folder, so I'm going to "cd projects", and now I'm going to press enter.
+
+And, if I do an "ls", you can see that I have my "starter-web" repository.
+
+So now I'm going to go there; "cd starter-web".
+
+Now that I'm there, I'm going to clear. Now I have modified my prompt
+
+to always display the current branch in my Git repository,
+
+so your screen may look a little different than mine;
+
+please see my bonus content on how to do the same for your environment.
+
+So, within the Git repository, I'm going to do an "ls",
+
+so now you can see all the files that are in the working diretory,
+
+and, before I do any work, I'm going to do a Git status.
+
+So, you can see that I'm on the master branch, and that it's
+
+"up-to-date with 'origin/master'.", which is the reference back to my
+
+GitHub repository. Since we haven't done anything yet,
+
+the working directory is clean, which means there's nothing to commit.
+
+The "git status" command, moving forward, will tell us the difference between
+
+the working directory, Git's staging area, the actual Git repository
+
+that is on the local system, as well as how that compares to the remote repository.
+
+So, great, now I'm going to clear, and the first thing I want to do is add a new file.
+
+And, to do so, I am going to use my text editor,
+
+which I have set up in a previous demo, which is TextMate.
+
+So I'm going to type "mate", and I'm going to call it "hipster.txt", press enter.
+
+That's going to invoke TextMate, and it's ready for some text.
+
+So, I'm going to go over to my web browser, and I already have a tab
+
+setup on the hipster ipsum website. The defaults are fine,
+
+and "Beer me!', is just the hipster ipsum's cute way of saying
+
+just give me some text. Great, so now I'm going to just select the first paragraph,
+
+copy it, and now I'm just going to go over to TextMate, and paste it in.
+
+Now it's time to save, which is command+s, and close without quitting,
+
+which is command+w. Now I'm going to return to my terminal, so if I do an "ls",
+
+you can see the "hipster.txt" is in our folder. So let's see what Git thinks of this file.
+
+So, if I do a "git status", Git tells me that there is one untracked file,
+
+and it also tells me how to add that file so that Git can track it.
+
+So, let's do that now; so "git add", and then the name of the file "hipster.txt",
+
+press enter. Now if we "git status" again, Git tells us something slightly different;
+
+it tells us that we have changes to be committed, and then it tells us the new file,
+
+"hipster.txt". This is Git's way of saying "this is in the staging area of Git".
+
+That is, this file is not yet committed, but it is something that Git is tracking
+
+and it's awaiting the next commit. So now, in order to proceed forward,
+
+we just have to type "git commit".
+
+Now, if I do this without specifying any additional parameters,
+
+my default editor will show up for the commit message.
+
+Great, well let's type a commit message: "My first commit".
+
+Great, now let's save, and then close. Once we close our editor,
+
+Git will use whatever we put into the editor as our commit message.
+
+All the hash marks are commits that are not committed.
+
+So, let's look at our commit; so the "git commit" command returned
+
+master, which is the current branch that it commits on, and then this weird text
+
+"ba5" and so on. That's the SHA-1, which is a unique identifier for the commit,
+
+followed by the actual commit message, which we entered into our text editor.
+
+The next line tells us we had "1 file changed", which resulted in "1 insertion",
+
+and the last line tells us which file actually was changed.
+
+Great, well let's do another "git status",
+
+now, this time, Git tells us that we're ahead of "origin/master" by one commit.
+
+It also tells us that we have nothing to be committed,
+
+and that our working directory is clean. When you do commit,
+
+everything that's in the staging area is committed,
+
+which means there's nothing left in the staging area after the commit,
+
+and, in this case, I didn't have any other pending changes in my working directory.
+
+So, after the commit, I do have a clean working directory.
+
+Also, the Git status command keeps track of "origin/master",
+
+which is our reference back to our remote repository on GitHub,
+
+and then it just lets us know that our repository is just a little different.
+
+That's important to know, because many of our commands in Git are local.
+
+So, to illustrate that, let's go back to our remote repository back on GitHub.
+
+So, this is the Git repository on GitHub that we cloned from.
+
+Which, in itself, is actually a fork of the upstream repository. It's on master branch
+
+and so, if I do a reload, you'll see the same files that we had from before.
+
+There currently is no "hipster.txt" file here. That just reiterates that
+
+the commit command was actually a local operation;
+
+it did not impact our remote repository. In order to do that,
+
+I'll go back to my terminal here, and the "git status" command actually tells us
+
+what we need to do in order to affect our remote repository;
+
+we need to push any changes that we have, actually local commits,
+
+up to our remote repository. But, before I do that,
+
+I'm going to do one other command first; this is the "git pull".
+
+So if I type "git pull origin master", this will update our repository
+
+with any changes that may have happened on the remote repository
+
+down to our local repository, just to make sure we're up-to-date
+
+before we do any pushes back up to our remote repository.
+
+This is a best practice; I recommend always doing a pull before doing a push.
+
+So now, if I press enter, it tells me that I'm already up to date,
+
+which is not surprising, since I'm the only one working against that remote repository.
+
+However, If you are working on a team, and you had multiple
+
+developers or contributors putting their code in the same repository,
+
+then you might get out of sync, which is why this is the best practice.
+
+So, now that I'm confident that my repository is up-to-date with the remote repository,
+
+it's safe to push my changes back up to the remote repository.
+
+So, in a similar command, "git push origin master".
+
+Now, I should kind of explain what "origin" and "master" mean here;
+
+so the "git push" command will push any commits from the local repository
+
+to the remote repository by reference name,
+
+as well as the branch that you want to push.
+
+So, "origin" is the name of the remote repository that we cloned from:
+
+hence it's named origin. It's just a convention, but I kind of like it.
+
+The next parameter is "master", which is our master branch;
+
+it's the only branch we have right now. But in this command
+
+I'm going to specify both the remote reference, and the branch name.
+
+So now, press enter, and you may be prompted for your username and password
+
+to get back to GitHub; since you're making changes to your remote repository,
+
+then you need to log in with your credentials. Once you've done that press enter.
+
+And, as long as you entered your credentials correctly,
+
+Git should push up all your changes that you have on your local system
+
+up to the remote repository. So, at the bottom, we can see that it confirms
+
+that it pushed the changes to my copy of the "starter-web" Git repository on GitHub.
+
+It also tells me which commits were involved;
+
+so, basically, it pushed the commit "5c05047" up to "ba5b0f0",
+
+which is also master to master, so my local master to my remote master.
+
+Well, let's go see if that actually happened. So let's go back to our browser,
+
+and now if we hit refresh or reload, we should see a new file:
+
+"hipster.txt", and even the commit message, "My first commit!".
+
+If we click on the file, you can see the contents of that file.
