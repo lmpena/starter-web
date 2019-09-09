@@ -1,5 +1,7 @@
 # Started Web Project
 
+This is a simple wet site project for showing how to use Git and GitHub together.
+
 ## Introducction
 
 ## Purpose
