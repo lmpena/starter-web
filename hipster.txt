@@ -253,3 +253,5 @@ and now if we hit refresh or reload, we should see a new file:
 "hipster.txt", and even the commit message, "My first commit!".
 
 If we click on the file, you can see the contents of that file.
+
+HOLA!
