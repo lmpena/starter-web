@@ -1,7 +1,7 @@
 # Starter Web Repo
 
 This repository is for showing how Git and GitHub work.
-Adding a line for rebasing example for lmpena
+Adding a line for rebasing example for lmpena, more changes from myfeature branch too.
 
 ## Purpose
 
