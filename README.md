@@ -12,3 +12,5 @@ Sample website with plenty of files for demos
 
 
 "please fork this repository and then issue Pull Requests for review"
+
+all rights reserved
